@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ESP32 Weather Control</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Control clima - ESP32</h1>
+
+    <section class="connection">
+      <label>IP del ESP32:
+        <input id="espIp" placeholder="10.192.136.130" />
+      </label>
+      <button id="btnConnect">Conectar WS</button>
+      <button id="btnDisconnect" disabled>Desconectar</button>
+      <p id="wsStatus" class="status">No conectado</p>
+    </section>
+
+    <section class="controls">
+      <h2>Enviar ciudad</h2>
+      <input id="cityInput" placeholder="Escribe ciudad..." />
+      <button id="btnSendCity">Enviar por WebSocket</button>
+
+      <h2>Inyección manual de temperatura</h2>
+      <label>Temperatura (°C):
+        <input id="manualTemp" type="number" step="0.1" />
+      </label>
+      <button id="btnManualTemp">Enviar manual (5s)</button>
+
+      <div class="exec-buttons">
+        <button id="btnStop">Detener ejecución</button>
+        <button id="btnResume">Reiniciar ejecución</button>
+      </div>
+    </section>
+
+    <section class="display">
+      <h2>Lectura actual</h2>
+      <div id="reading" class="reading">Sin datos</div>
+      <div id="overrideBanner" class="override hidden">OVERRIDE: <span id="overrideValue"></span> °C</div>
+    </section>
+
+    <section class="logs">
+      <h2>Logs</h2>
+      <div id="logs" class="logbox"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

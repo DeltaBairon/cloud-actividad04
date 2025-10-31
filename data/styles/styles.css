@@ -1,0 +1,91 @@
+:root{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --bg: #0f172a;
+  --card: #0b1220;
+  --accent: #0ea5a4;
+  --muted: #94a3b8;
+  color-scheme: dark;
+}
+
+body{
+  margin:0;
+  padding:18px;
+  background: linear-gradient(180deg, #071022 0%, #051025 100%);
+  color: #e6eef6;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+  display:grid;
+  gap:18px;
+}
+
+h1{font-size:1.6rem; margin:0 0 6px 0}
+h2{font-size:1rem; margin:12px 0 6px 0; color:var(--muted)}
+
+section{
+  background: rgba(255,255,255,0.02);
+  border-radius:10px;
+  padding:12px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+}
+
+label{display:block; margin-bottom:6px}
+input[type="text"], input[type="number"], input#espIp{
+  padding:8px 10px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color:inherit;
+  width:60%;
+  margin-right:8px;
+}
+
+button{
+  padding:8px 12px;
+  border-radius:8px;
+  border: none;
+  cursor:pointer;
+  background: linear-gradient(180deg,var(--accent), #06b6b4);
+  color:#062022;
+  font-weight:600;
+  margin:6px 6px 6px 0;
+}
+
+button[disabled]{opacity:0.4; cursor:not-allowed}
+
+.exec-buttons{margin-top:10px}
+
+.reading{
+  font-size:1.2rem;
+  background: rgba(255,255,255,0.02);
+  padding:12px;
+  border-radius:8px;
+  min-height:48px;
+  display:flex;
+  align-items:center;
+}
+
+.logbox{
+  max-height:240px;
+  overflow:auto;
+  font-family: monospace;
+  font-size:0.85rem;
+  background: rgba(0,0,0,0.25);
+  padding:8px;
+  border-radius:8px;
+}
+
+.status{margin:6px 0 0 0; color:var(--muted)}
+
+.override{
+  margin-top:10px;
+  padding:8px;
+  background: rgba(255,255,255,0.03);
+  border-radius:8px;
+  font-weight:700;
+  color:#ffd6a5;
+}
+
+.hidden{display:none}
